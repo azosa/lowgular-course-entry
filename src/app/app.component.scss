@@ -1,0 +1,19 @@
+$font: Helvetica,sans-serif;
+$primary-color: #333;
+body{
+  font-family: $font;
+  color: $primary-color;
+  height:100%;
+  width:100%;
+  background:#bcbcbc;
+}
+ul {
+  line-height: 1.7em;
+  margin: 5px 0 15px;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0 0 5px 20px;
+}
