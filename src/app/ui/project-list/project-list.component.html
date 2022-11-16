@@ -1,0 +1,8 @@
+
+<div [className]="'projects'">
+  <h2>List of all projects</h2>
+  <ul *ngIf="data$ | async as data; else empty">
+    <li *ngFor = "let project of data">{{project.id}}. <i>'{{project.name}}'- </i>  <span>{{project.owner}}</span></li>
+  </ul>
+</div>
+<ng-template #empty> no data </ng-template>

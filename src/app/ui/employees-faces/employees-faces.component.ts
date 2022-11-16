@@ -1,17 +1,18 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EmployeeService } from '../../services/employee.service';
+import {Person} from "@angular/cli/utilities/package-json";
 import {PersonModel} from "../../model/person.model";
 
 @Component({
-  selector: 'employee-list',
-  templateUrl: './employee-list.component.html',
+  selector: 'app-employees-faces',
+  templateUrl: './employees-faces.component.html',
   styleUrls: ['../../app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.Emulated,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EmployeeListComponent {
+export class EmployeesFacesComponent {
   constructor(private _employeeService: EmployeeService) { }
-  data$: Observable<PersonModel[] | null> =this._employeeService.getAll();
-  text$: string = 'my additional text';
+  data$: Observable<PersonModel[] | null> = this._employeeService.getAll();
+
 }
