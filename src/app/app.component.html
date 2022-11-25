@@ -1,6 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">EmployeeApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="employee-list">List</a>
+      <a class="nav-item nav-link" routerLink="create-employee">Create employee</a>
+
+    </div>
+  </div>
+</nav>
+
+
 
 <!--<employee-list></employee-list>-->
 <!--<app-employees-faces></app-employees-faces>-->
 <!--<app-project-list></app-project-list>-->
 <!--<app-employee-form></app-employee-form>-->
 <router-outlet></router-outlet>
+
+
+<footer class="text-center text-white fixed-bottom  bg-dark">
+  <div class="text-center p-4" >
+    © 2022 Copyright:
+    <a class="text-reset fw-bold" href="https://github.com/azosa/lowgular-course-entry/">EmployeeApp</a>
+  </div>
+</footer>
