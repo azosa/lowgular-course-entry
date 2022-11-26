@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import {Observable, switchMap} from 'rxjs';
+import { map } from 'rxjs/operators';
 import { EmployeeDetailsParamsModel } from '../../model/employee-details-params.model';
-import {map} from "rxjs/operators";
+import { EmployeeService } from '../../services/employee.service';
+import {EmployeeModel} from "../../model/employee.model";
 
 @Component({
   selector: 'app-employee-details',
@@ -13,9 +15,13 @@ import {map} from "rxjs/operators";
 export class EmployeeDetailsComponent {
 
   readonly params$: Observable<EmployeeDetailsParamsModel> = this._activatedRoute.params.pipe(
-    map(params=>({id:params['id'],
-    name:params['name']})));
+    map(params => ({
+      id: params['id'],
+      name: params['name']
+    })));
+readonly details$: Observable<EmployeeModel> =this._activatedRoute.params.pipe(
+  switchMap(data=>this._employeeService.getOne(data['id'])))
+  constructor(private _activatedRoute: ActivatedRoute, private _employeeService: EmployeeService) {
 
-  constructor(private _activatedRoute: ActivatedRoute) {
   }
 }
