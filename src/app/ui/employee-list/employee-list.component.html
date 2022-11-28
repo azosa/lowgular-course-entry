@@ -1,9 +1,9 @@
-<h1>Employee list</h1>
-<ul *ngIf="data$ | async as data; else empty">
-  <li *ngFor="let employee of data">{{ employee.personalNumber }}:
-    <a href="/employee-details/{{employee.personalNumber}}">{{ employee.name }}</a>
+<h1 class="m-3">Employee list</h1>
+<ul *ngIf="data$ | async as data; else empty" class="list-group">
+  <li class="list-group-item list-group-item-light d-flex justify-content-between text-left" *ngFor="let employee of data">{{ employee.personalNumber }}:
+    <a  class="link-secondary flex-grow-1 mr-auto ml-2" href="/employee-details/{{employee.personalNumber}}">{{ employee.name }}</a>
 <!--    E-mail: {{employee.mail}}-->
-  <button (click)="remove(employee.personalNumber)">Remove me</button>
+  <button  class="btn btn-warning justify-self-end" (click)="remove(employee.personalNumber)">Remove me</button>
   </li>
 </ul>
 <ng-template #empty> There is no data </ng-template>

@@ -1,3 +1,4 @@
-<h1>Employee details</h1>
-{{(details$ | async)?.id}} <br>
-{{(details$ | async)?.name}}
+<div class="container"><h1>Employee details</h1>
+<span class="font-weight-bold"> Employee id:</span> {{(details$ | async)?.id}} <br>
+  <span class="font-weight-bold"> Name:</span> {{(details$ | async)?.name}}
+</div>

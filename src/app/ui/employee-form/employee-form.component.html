@@ -1,9 +1,21 @@
-<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmitted(employeeForm.value)">
-  <input type="text" formControlName="name" placeholder="Name">
-  <input type="number" formControlName="age" placeholder="Age">
-  <input type="number" formControlName="salary" placeholder="Salary">
-  <input type="submit" [disabled]="employeeForm.invalid" value="Submit">
-</form>
-<div *ngIf="employeeForm.valid">Your new employee:{{employeeForm.value.name}}, age: {{employeeForm.value.age}}
-  with salary {{employeeForm.value.salary}}$ will be added to the system</div>
+<div class="container">
+  <h1>Create employee</h1>
+  <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmitted(employeeForm.value)">
+    <div class="form-group mt-8">
+      <label for="name">Name</label>
+      <input class="form-control" id="name" type="text" formControlName="name">
+    </div>
+    <div class="form-group">      <label for="age">Age</label>
+      <input class="form-control" id="age" type="number" formControlName="age" ></div>
+    <div class="form-group">      <label for="salary">Salary</label>
+      <input class="form-control" type="number"  id='salary' formControlName="salary">
+    </div>
+    <div class="form-group">
+      <input class="btn btn-primary" type="submit" [disabled]="employeeForm.invalid"
+                                   value="Submit"></div>
+  </form>
+  <div *ngIf="employeeForm.valid">Your new employee: <span class="font-weight-bold"> {{employeeForm.value.name}}</span>, age: <span class="font-weight-bold">{{employeeForm.value.age}}</span>
+    with salary <span class="font-weight-bold">{{employeeForm.value.salary}}$</span> will be added to the system.
+  </div>
 
+</div>
